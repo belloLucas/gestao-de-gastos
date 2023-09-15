@@ -41,23 +41,7 @@
       </div>
     </section>
 
-    <main id="listExpenses">
-      <div class="labels">
-        <p>Descrição</p>
-        <p>Preço</p>
-        <p>Categoria</p>
-        <p>Data</p>
-      </div>
-
-      <div class="boxExpense">
-        <h4>Desenvolvimento de site</h4>
-        <p>R$ 3000</p>
-        <p>Venda</p>
-        <p>15/09/2023</p>
-      </div>
-    </main>
-
-    <dialog id="addExpenseModal" open>
+    <dialog id="addExpenseModal">
       <h1>Adicione um gasto ou ganho</h1>
       <button id="closeAddCostModal">✖</button>
       <div id="inputs">
@@ -82,5 +66,23 @@
       </div>
       <input type="submit" id="add" value="Adicionar gasto" />
     </dialog>
+
+    <main id="listExpenses">
+      <div class="labels">
+        <p>Descrição</p>
+        <p>Preço</p>
+        <p>Categoria</p>
+        <p>Data</p>
+      </div>
+
+      <div class="boxExpense">
+        <h4>Desenvolvimento de site</h4>
+        <p>R$ 3000</p>
+        <p>Venda</p>
+        <p>15/09/2023</p>
+      </div>
+    </main>
+
+    <script src="./assets/js/addCost.js"></script>
   </body>
 </html>
