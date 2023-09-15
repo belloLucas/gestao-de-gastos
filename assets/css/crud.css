@@ -9,3 +9,30 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #ffd99b;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-family: monospace;
+}
+
+.header h1 {
+  font-size: 38px;
+}
+
+.header #logout {
+  padding: 10px 40px;
+  width: 130px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bolder;
+  outline: none;
+}
+
+.header #logout:hover {
+  background-color: #ccc;
+}

@@ -36,7 +36,10 @@ const login = function () {
     alert("Login realizado com sucesso!");
     loginModal.close();
     loginModal.style.display = "none";
-    window.location.href = "crud.html";
+
+    //Redirecting to crud.html
+    const href = (window.location.href = "crud.html");
+    window.location.replace(href);
   } else {
     alert(
       "Não foi possível efetuar o login. Verifique seu e-mail e senha e tente novamente."
