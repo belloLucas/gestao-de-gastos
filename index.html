@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Css -->
+    <link rel="stylesheet" href="./assets/css/login.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Gestão de Gastos</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Gestão de Gastos</h1>
+      <button id="openLoginModalButton">Login</button>
+    </header>
+
+    <dialog id="loginModal">
+      <h1>Realize o login</h1>
+      <button id="closeLoginModal">✖</button>
+      <div id="inputs">
+        <input type="email" name="email" id="inputEmail" placeholder="Email" />
+        <input
+          type="password"
+          name="password"
+          id="inputPassword"
+          placeholder="Senha"
+        />
+      </div>
+      <input type="submit" id="login" value="Entrar" />
+      <p><a href="#">Esqueceu sua senha?</a></p>
+    </dialog>
+
+    <script src="./assets/js/login.js"></script>
+  </body>
+</html>
