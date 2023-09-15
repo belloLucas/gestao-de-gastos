@@ -20,7 +20,67 @@
   <body>
     <header class="header">
       <h1>Gestão de Gastos</h1>
-      <button id="logout">Sair</button>
+      <div class="buttons">
+        <button id="addExpense">Nova transação</button>
+        <button id="logout">Sair</button>
+      </div>
     </header>
+
+    <section id="values">
+      <div class="box" id="gains">
+        <h4>Ganhos</h4>
+        <h1>R$ 3000</h1>
+      </div>
+      <div class="box" id="costs">
+        <h4>Gastos</h4>
+        <h1>R$ 3000</h1>
+      </div>
+      <div class="box" id="total">
+        <h4>Total</h4>
+        <h1>R$ 3000</h1>
+      </div>
+    </section>
+
+    <main id="listExpenses">
+      <div class="labels">
+        <p>Descrição</p>
+        <p>Preço</p>
+        <p>Categoria</p>
+        <p>Data</p>
+      </div>
+
+      <div class="boxExpense">
+        <h4>Desenvolvimento de site</h4>
+        <p>R$ 3000</p>
+        <p>Venda</p>
+        <p>15/09/2023</p>
+      </div>
+    </main>
+
+    <dialog id="addExpenseModal" open>
+      <h1>Adicione um gasto ou ganho</h1>
+      <button id="closeAddCostModal">✖</button>
+      <div id="inputs">
+        <input
+          type="text"
+          name="name"
+          id="inputNome"
+          placeholder="Descrição do gasto"
+        />
+        <input
+          type="text"
+          name="value"
+          id="inputValue"
+          placeholder="Digite o valor"
+        />
+        <input
+          type="text"
+          name="category"
+          id="inputCategory"
+          placeholder="Insira a categoria"
+        />
+      </div>
+      <input type="submit" id="add" value="Adicionar gasto" />
+    </dialog>
   </body>
 </html>
