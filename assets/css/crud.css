@@ -82,31 +82,25 @@ body {
   padding-top: 5rem;
 }
 
-#listExpenses .labels {
-  display: flex;
+#listExpenses .labels,
+#listExpenses .boxExpense {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   max-width: 100%;
-  width: 80%;
+  width: 90%;
   padding: 1rem;
   border-radius: 5px;
-  padding: 1.3rem;
-  color: #969cb2;
 }
 
-#listExpenses .labels .label {
-  text-align: center;
+#listExpenses .labels,
+#listExpenses .boxExpense {
+  color: #969cb2;
 }
 
 #listExpenses .boxExpense {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  max-width: 100%;
   margin-bottom: 10px;
-  width: 80%;
-  border-radius: 5px;
   background-color: #ffffff;
-  color: #969cb2;
 }
 
 #listExpenses .boxExpense h4 {
@@ -117,12 +111,15 @@ body {
 #listExpenses .labels p,
 #listExpenses .boxExpense p,
 #listExpenses .boxExpense h4 {
-  flex: 1;
+  text-align: center;
+}
+
+#listExpenses .boxExpense .buttons {
   text-align: center;
 }
 
 #listExpenses .boxExpense .buttons button {
-  margin-right: 10px;
+  margin-right: 5px;
   padding: 5px;
   background-color: transparent;
   border: none;
