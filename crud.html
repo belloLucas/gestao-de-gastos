@@ -15,6 +15,12 @@
       rel="stylesheet"
     />
 
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
     <title>Gestão de Gastos</title>
   </head>
   <body>
@@ -69,10 +75,11 @@
 
     <main id="listExpenses">
       <div class="labels">
-        <p>Descrição</p>
-        <p>Preço</p>
-        <p>Categoria</p>
-        <p>Data</p>
+        <p class="label">Descrição</p>
+        <p class="label">Preço</p>
+        <p class="label">Categoria</p>
+        <p class="label">Data</p>
+        <p class="label">Editar/Remover</p>
       </div>
 
       <div class="boxExpense">
@@ -80,6 +87,10 @@
         <p>R$ 3000</p>
         <p>Venda</p>
         <p>15/09/2023</p>
+        <div class="buttons">
+          <button><i class="bi bi-pencil-fill"></i></button>
+          <button><i class="bi bi-x-circle"></i></button>
+        </div>
       </div>
     </main>
 

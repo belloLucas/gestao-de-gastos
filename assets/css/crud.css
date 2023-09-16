@@ -84,23 +84,26 @@ body {
 
 #listExpenses .labels {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
   max-width: 100%;
   width: 80%;
-  gap: 10rem;
-  padding-bottom: 1.3rem;
+  padding: 1rem;
+  border-radius: 5px;
+  padding: 1.3rem;
   color: #969cb2;
+}
+
+#listExpenses .labels .label {
+  text-align: center;
 }
 
 #listExpenses .boxExpense {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
+  padding: 1rem;
   max-width: 100%;
+  margin-bottom: 10px;
   width: 80%;
-  gap: 10rem;
-  padding: 1.3rem;
   border-radius: 5px;
   background-color: #ffffff;
   color: #969cb2;
@@ -116,6 +119,25 @@ body {
 #listExpenses .boxExpense h4 {
   flex: 1;
   text-align: center;
+}
+
+#listExpenses .boxExpense .buttons button {
+  margin-right: 10px;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#listExpenses .boxExpense .buttons button i {
+  font-size: 20px;
+}
+
+#listExpenses .boxExpense .buttons button:hover {
+  color: white;
+  background-color: #222121;
 }
 
 #addExpenseModal {
