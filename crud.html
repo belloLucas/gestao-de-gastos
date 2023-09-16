@@ -73,6 +73,32 @@
       <input type="submit" id="add" value="Adicionar gasto" />
     </dialog>
 
+    <dialog id="editExpenseModal">
+      <h1>Edite o gasto ou ganho</h1>
+      <button id="closeEditCostModal">✖</button>
+      <div id="inputs">
+        <input
+          type="text"
+          name="name"
+          id="editName"
+          placeholder="Descrição do gasto"
+        />
+        <input
+          type="text"
+          name="value"
+          id="editValue"
+          placeholder="Digite o valor"
+        />
+        <input
+          type="text"
+          name="category"
+          id="editCategory"
+          placeholder="Insira a categoria"
+        />
+      </div>
+      <input type="submit" id="edit" value="Editar gasto" />
+    </dialog>
+
     <main id="listExpenses">
       <div class="labels">
         <p class="label">Descrição</p>
@@ -80,6 +106,22 @@
         <p class="label">Categoria</p>
         <p class="label">Data</p>
         <p class="label">Editar/Remover</p>
+      </div>
+
+      <div class="boxExpense">
+        <h4 class="title">Exemplo: Playstation 5</h4>
+        <p class="price">R$ 4500</p>
+        <p class="category">Eletronicos</p>
+        <p class="todayDate">16/09/2023</p>
+
+        <div class="buttons">
+          <button onclick="editCost(event)" class="editBtn">
+            <i class="bi bi-pencil-fill"></i>
+          </button>
+          <button onclick="deleteCost(event)" class="deleteBtn">
+            <i class="bi bi-x-circle"></i>
+          </button>
+        </div>
       </div>
     </main>
 

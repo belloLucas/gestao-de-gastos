@@ -137,7 +137,8 @@ body {
   background-color: #222121;
 }
 
-#addExpenseModal {
+#addExpenseModal,
+#editExpenseModal {
   flex-direction: column;
   align-items: center;
   padding: 5rem;
@@ -151,15 +152,17 @@ body {
   border-radius: 5px;
 }
 
-#addExpenseModal h1 {
+#addExpenseModal h1,
+#editExpenseModal h1 {
   font-size: 26px;
   margin-bottom: 20px;
 }
 
-#addExpenseModal #closeAddCostModal {
+#addExpenseModal #closeAddCostModal,
+#editExpenseModal #closeEditCostModal {
   position: absolute;
   top: 0;
-  left: 88%;
+  left: 87%;
   padding: 10px 15px;
   border: none;
   background-color: transparent;
@@ -169,20 +172,23 @@ body {
   outline: none;
 }
 
-#addExpenseModal #inputs {
+#addExpenseModal #inputs,
+#editExpenseModal #inputs {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-#addExpenseModal #inputs input[type="text"] {
+#addExpenseModal #inputs input[type="text"],
+#editExpenseModal #inputs input[type="text"] {
   width: 300px;
   padding: 10px 15px;
   border: 1px solid black;
   border-radius: 5px;
 }
 
-#addExpenseModal #add {
+#addExpenseModal #add,
+#editExpenseModal #edit {
   width: 300px;
   padding: 5px 20px;
   border-radius: 5px;
@@ -191,6 +197,7 @@ body {
   outline: none;
 }
 
-#addExpenseModal #add:hover {
+#addExpenseModal #add:hover,
+#editExpenseModal #edit:hover {
   background-color: #ccc;
 }
