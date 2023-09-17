@@ -8,9 +8,10 @@ const logout = document.getElementById("logout");
 const addCost = document.getElementById("add");
 
 //Values boxes
-const gainValue = document.getElementById("gainsValue");
-const spentValue = document.getElementById("spentValue");
-const totalValue = document.getElementById("totalValue");
+const gainValue = document.getElementById("gains");
+const spentValue = document.getElementById("costs");
+const totalValue = document.getElementById("total");
+let spentCost = 0;
 
 //Modals and expenses container
 const expenseModal = document.getElementById("addExpenseModal");
@@ -90,10 +91,14 @@ const getTodayDate = function () {
 
 addCost.addEventListener("click", () => {
   const nameValue = inputNome.value;
-  const priceValue = inputValue.value;
+  const priceValue = parseFloat(inputValue.value);
   const categoryValue = inputCategory.value;
   createEl(nameValue, priceValue, categoryValue, getTodayDate());
-  //updateValueBoxes(priceValue);
+
+  //Adding the cost value to the box Costs
+  spentCost = spentCost += priceValue;
+  spentValue.querySelector("h1").innerText = `R$ ${spentCost}`;
+
   //Reseting inputs values
   inputNome.value = "";
   inputValue.value = "";
@@ -150,6 +155,15 @@ const editCost = function (event) {
 const deleteCost = function (e) {
   const clickedBtn = e.target;
   const boxExpense = clickedBtn.closest(".boxExpense");
+
+  //Removing the price of the element that is being removed
+  const priceEl = boxExpense.querySelector(".price");
+  const priceText = priceEl.innerText;
+  const price = parseFloat(priceText.replace("R$", "").trim());
+  console.log(price);
+  spentCost = spentCost - price;
+  spentValue.querySelector("h1").innerText = `R$ ${spentCost}`;
+
   if (boxExpense) boxExpense.remove();
 };
 
