@@ -19,6 +19,19 @@ Esse projeto consiste em um sistema de gerenciamento de gastos pessoais.
 ✅ Cálculo automático do valor destes gastos <br>
 ✅ Cálculo do quanto do seu salário está disponível, após subtração dos gastos <br>
 
+### Acesse o projeto
+
+---
+
+⚠️ Importante! A página inicial exige um login, e o login para acessar é o seguinte:
+
+```
+Email: email@email.com
+Senha: 1234
+```
+
+Você pode acessar e testar o projeto no seguinte link: https://bellolucas.github.io/gestao-de-gastos/crud.html
+
 ### Como baixar
 
 ---
