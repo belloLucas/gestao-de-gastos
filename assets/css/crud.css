@@ -219,3 +219,55 @@ body {
 #editExpenseModal #edit:hover {
   background-color: #ccc;
 }
+
+@media (max-width: 1150px) {
+  .header .buttons {
+    display: block;
+  }
+
+  .header .buttons .searchInput {
+    margin-bottom: 10px;
+  }
+
+  .header #search {
+    max-width: 100%;
+    width: 415px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header #search {
+    max-width: 100%;
+    width: 250px;
+  }
+
+  .header .magnifier {
+    position: relative;
+    left: 85%;
+    top: -27px;
+  }
+
+  .header #logout,
+  #addExpense {
+    max-width: 100%;
+  }
+
+  #values .box {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  #values .box:nth-child(1) {
+    margin-left: 20px;
+  }
+
+  #values .box:nth-child(3) {
+    margin-right: 20px;
+  }
+}
