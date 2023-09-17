@@ -12,6 +12,8 @@ const closeEditModal = document.getElementById("closeEditCostModal");
 const logout = document.getElementById("logout");
 const addCost = document.getElementById("add");
 
+const search = document.getElementById("search");
+
 //Values boxes
 const gainValue = document.getElementById("gains");
 const spentValue = document.getElementById("costs");
@@ -186,6 +188,33 @@ const deleteCost = function (e) {
 
   if (boxExpense) boxExpense.remove();
 };
+
+const filterBox = function () {
+  const boxExpense = document.querySelectorAll(".boxExpense");
+  if (search.value) {
+    for (let box of boxExpense) {
+      let titleEl = box.querySelector("h4");
+      let title = titleEl.textContent.toLowerCase();
+
+      let searchValue = search.value.toLowerCase();
+      console.log(searchValue);
+
+      if (!title.includes(searchValue)) {
+        console.log("titulo difere do texto do filtro");
+        box.style.display = "none";
+      } else {
+        console.log("titulo igual ao texto do input");
+        box.style.display = "grid";
+      }
+    }
+  } else {
+    for (let box of boxExpense) {
+      box.style.display = "grid";
+    }
+  }
+};
+
+search.addEventListener("input", filterBox);
 
 logout.addEventListener("click", () => {
   const href = (window.location.href = "index.html");

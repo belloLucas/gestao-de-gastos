@@ -27,6 +27,16 @@
     <header class="header">
       <h1>Gestão de Gastos</h1>
       <div class="buttons">
+        <div class="searchInput">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Pesquise seus gastos aqui"
+          />
+          <i class="bi bi-search magnifier"></i>
+        </div>
+
         <button id="addExpense">Nova transação</button>
         <button id="logout">Sair</button>
       </div>
@@ -115,9 +125,6 @@
         <p class="todayDate">16/09/2023</p>
 
         <div class="buttons">
-          <!-- <button onclick="editCost(event)" class="editBtn">
-            <i class="bi bi-pencil-fill"></i>
-          </button> -->
           <button onclick="deleteCost(event)" class="deleteBtn">
             <i class="bi bi-x-circle"></i>
           </button>
@@ -125,6 +132,6 @@
       </div>
     </main>
 
-    <script src="./assets/js/addCost.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
