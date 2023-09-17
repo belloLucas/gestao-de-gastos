@@ -7,6 +7,11 @@ const closeEditModal = document.getElementById("closeEditCostModal");
 const logout = document.getElementById("logout");
 const addCost = document.getElementById("add");
 
+//Values boxes
+const gainValue = document.getElementById("gainsValue");
+const spentValue = document.getElementById("spentValue");
+const totalValue = document.getElementById("totalValue");
+
 //Modals and expenses container
 const expenseModal = document.getElementById("addExpenseModal");
 const editModal = document.getElementById("editExpenseModal");
@@ -16,11 +21,6 @@ const expenseContainer = document.getElementById("listExpenses");
 const inputNome = document.getElementById("inputNome");
 const inputValue = document.getElementById("inputValue");
 const inputCategory = document.getElementById("inputCategory");
-
-//Edit expense inputs
-const editName = document.getElementById("editName");
-const editPrice = document.getElementById("editValue");
-const editCategory = document.getElementById("editCategory");
 
 //Handling add Modal closing and opening
 openAddModal.addEventListener("click", () => {
@@ -93,7 +93,7 @@ addCost.addEventListener("click", () => {
   const priceValue = inputValue.value;
   const categoryValue = inputCategory.value;
   createEl(nameValue, priceValue, categoryValue, getTodayDate());
-
+  //updateValueBoxes(priceValue);
   //Reseting inputs values
   inputNome.value = "";
   inputValue.value = "";
@@ -105,48 +105,45 @@ addCost.addEventListener("click", () => {
 });
 
 //Handling edit
-const editCost = function (e) {
+const editCost = function (event) {
   //Handling the modal opening and closing
-  const clickedBtn = e.target;
-  const boxExpense = clickedBtn.closest(".boxExpense");
-  if (boxExpense) {
-    editModal.showModal();
-    editModal.style.display = "flex";
+  editModal.showModal();
+  editModal.style.display = "flex";
 
-    const getValues = function () {
-      //Getting the values from editInputs
+  //Getting the edit inputs
+  const editName = document.getElementById("editName");
+  const editPrice = document.getElementById("editValue");
+  const editCategory = document.getElementById("editCategory");
+
+  const boxExpense = event.target.closest(".boxExpense");
+  console.log(boxExpense);
+
+  const addEdit = document.getElementById("edit");
+  addEdit.addEventListener("click", () => {
+    if (boxExpense === event.target.closest(".boxExpense")) {
+      //Retrieving inputs values
       const editNameValue = editName.value;
       const editPriceValue = editPrice.value;
       const editCategoryValue = editCategory.value;
 
-      //Getting the text elements from boxExpense
-      const title = document.querySelector(".title");
-      const price = document.querySelector(".price");
-      const category = document.querySelector(".category");
-      const date = document.querySelector(".todayDate");
+      //Setting the new values that were retrieved from the editInputs
+      boxExpense.querySelector(".title").innerText = editNameValue;
+      boxExpense.querySelector(".price").innerText = `R$ ${editPriceValue}`;
+      boxExpense.querySelector(".category").innerText = editCategoryValue;
+      boxExpense.querySelector(".todayDate").innerText = getTodayDate();
+    }
 
-      //Setting the new values
-      title.innerText = editNameValue;
-      price.innerText = `R$ ${editPriceValue}`;
-      category.innerText = editCategoryValue;
-      date.innerText = getTodayDate();
-    };
+    editModal.close();
+    editModal.style.display = "none";
+    editName.value = "";
+    editPrice.value = "";
+    editCategory.value = "";
+  });
 
-    const addEdit = document.getElementById("edit");
-    addEdit.addEventListener("click", () => {
-      getValues();
-      editModal.close();
-      editModal.style.display = "none";
-      editName.value = "";
-      editPrice.value = "";
-      editCategory.value = "";
-    });
-
-    closeEditModal.addEventListener("click", () => {
-      editModal.close();
-      editModal.style.display = "none";
-    });
-  }
+  closeEditModal.addEventListener("click", () => {
+    editModal.close();
+    editModal.style.display = "none";
+  });
 };
 
 //Handling delete
@@ -155,6 +152,12 @@ const deleteCost = function (e) {
   const boxExpense = clickedBtn.closest(".boxExpense");
   if (boxExpense) boxExpense.remove();
 };
+
+// const updateValueBoxes = function (value, type) {
+//   let currentValue = Number(spentValue.innerHTML);
+//   currentValue = 0;
+//   spentValue.textContent = `R$ ${(currentValue += value)}`;
+// };
 
 logout.addEventListener("click", () => {
   const href = (window.location.href = "index.html");
