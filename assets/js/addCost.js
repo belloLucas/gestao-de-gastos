@@ -1,5 +1,10 @@
 "use strict";
 
+window.onload = () => {
+  const gain = parseFloat(prompt("Digite quanto você recebeu: "));
+  getSalary(gain);
+};
+
 //Buttons
 const openAddModal = document.getElementById("addExpense");
 const closeAddModal = document.getElementById("closeAddCostModal");
@@ -87,6 +92,12 @@ const getTodayDate = function () {
   const currDate = `${day}/${month}/${year}`;
   console.log(currDate);
   return currDate;
+};
+
+const getSalary = function (salary) {
+  const gain = salary;
+  const gainTitle = gainValue.querySelector("h1");
+  gainTitle.innerText = `R$ ${parseFloat(gain)}`;
 };
 
 addCost.addEventListener("click", () => {
