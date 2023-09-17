@@ -23,7 +23,7 @@ Esse projeto consiste em um sistema de gerenciamento de gastos pessoais.
 
 ---
 
-⚠️ Importante! A página inicial exige um login, e o login para acessar é o seguinte:
+⚠️ Importante: A página inicial exige um login, e o login para acessar é o seguinte:
 
 ```
 Email: email@email.com
