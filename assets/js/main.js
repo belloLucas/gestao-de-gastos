@@ -182,9 +182,12 @@ const deleteCost = function (e) {
   const priceEl = boxExpense.querySelector(".price");
   const priceText = priceEl.innerText;
   const price = parseFloat(priceText.replace("R$", "").trim());
-  console.log(price);
   spentCost = spentCost - price;
   spentValue.querySelector("h1").innerText = `R$ ${spentCost}`;
+
+  //Updating the total
+  total = total += price;
+  totalValue.querySelector("h1").innerText = `R$ ${total}`;
 
   if (boxExpense) boxExpense.remove();
 };
