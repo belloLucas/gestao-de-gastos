@@ -98,6 +98,9 @@ const getSalary = function (salary) {
   const gain = salary;
   const gainTitle = gainValue.querySelector("h1");
   gainTitle.innerText = `R$ ${parseFloat(gain)}`;
+
+  const totalTitle = totalValue.querySelector("h1");
+  totalTitle.innerText = `R$ ${parseFloat(gain)}`;
 };
 
 addCost.addEventListener("click", () => {
@@ -177,12 +180,6 @@ const deleteCost = function (e) {
 
   if (boxExpense) boxExpense.remove();
 };
-
-// const updateValueBoxes = function (value, type) {
-//   let currentValue = Number(spentValue.innerHTML);
-//   currentValue = 0;
-//   spentValue.textContent = `R$ ${(currentValue += value)}`;
-// };
 
 logout.addEventListener("click", () => {
   const href = (window.location.href = "index.html");
