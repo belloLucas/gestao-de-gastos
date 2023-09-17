@@ -17,6 +17,7 @@ const gainValue = document.getElementById("gains");
 const spentValue = document.getElementById("costs");
 const totalValue = document.getElementById("total");
 let spentCost = 0;
+let total = 0;
 
 //Modals and expenses container
 const expenseModal = document.getElementById("addExpenseModal");
@@ -101,6 +102,7 @@ const getSalary = function (salary) {
 
   const totalTitle = totalValue.querySelector("h1");
   totalTitle.innerText = `R$ ${parseFloat(gain)}`;
+  total = gain;
 };
 
 addCost.addEventListener("click", () => {
@@ -112,6 +114,10 @@ addCost.addEventListener("click", () => {
   //Adding the cost value to the box Costs
   spentCost = spentCost += priceValue;
   spentValue.querySelector("h1").innerText = `R$ ${spentCost}`;
+
+  //Subtracting the cost value from the total value
+  total -= priceValue;
+  totalValue.querySelector("h1").innerText = `R$ ${total}`;
 
   //Reseting inputs values
   inputNome.value = "";
