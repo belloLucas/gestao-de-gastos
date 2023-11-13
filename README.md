@@ -30,7 +30,7 @@ Email: email@email.com
 Senha: 1234
 ```
 
-Você pode acessar e testar o projeto no seguinte link: https://bellolucas.github.io/gestao-de-gastos/crud.html
+Você pode acessar e testar o projeto no seguinte link: https://bellolucas.github.io/gestao-de-gastos/
 
 ### Como baixar
 
